@@ -9,7 +9,6 @@ CORS(app)
 
 
 gene_trie = pygtrie.CharTrie()
-all_matching_genes = []
 
 @app.before_first_request
 def add_words_to_trie():
@@ -30,6 +29,7 @@ def gene_search(char):
 
 @app.route('/genes/<gene>')
 def get_gene(gene):
+    all_matching_genes = []
     with open('./variants.tsv') as tsvfile:
         reader = csv.DictReader(tsvfile, dialect='excel-tab')
         for row in reader:
