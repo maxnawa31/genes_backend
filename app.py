@@ -21,6 +21,7 @@ def empty_search():
 
 @app.route('/search/<char>')
 def gene_search(char):
+    print(char)
     if gene_trie.has_key(char.upper()):
         return jsonify(gene_trie.keys(char.upper()))
     if not gene_trie.has_subtrie(char.upper()):
