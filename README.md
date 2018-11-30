@@ -1,5 +1,7 @@
 ## Instructions
 
+Clone this repository
+
 In the project directory:
 
 Make a virtual environment:<br>
